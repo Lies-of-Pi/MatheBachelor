@@ -4,4 +4,5 @@ Um mein Analytisches Modell zu testen habe ich die Variable just_one_covariate i
 so werden nur Daten für einen festen Patienten erzeugt. Dabei kann man nun über die Daten direkt die Zustandsbesetzungswahrscheinlichkeit empirisch auszählen.
 Sobald der Parameter wieder auf False gesetzt wird, werden wieder Daten verschiedener Patienten erzeugt.
 Um die Abbildungen der Datengenerierung aus der Arbeit zu erhalten muss in der Datei data_generation_gompertz just_one_covariate auf True gesetzt werden. Daraufhin werden die
-Daten und die Werte des wahren analytischen Modells berechnet. Die Datei .... plottet dann die Ergebnisse und erzeugt die besagten Abbildungen.
+Daten und die Werte des wahren analytischen Modells berechnet. Die Datei True_State_Prob_Load_and_Plot plottet dann die Ergebnisse und erzeugt die besagten Abbildungen.
+Diese können dem Ordner StateProbTheory entnommen werden.
