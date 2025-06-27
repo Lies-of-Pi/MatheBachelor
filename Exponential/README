@@ -1,2 +1,4 @@
 Um den Empirischen Test der Varianz von log(t_1 / t_2) für exponentialverteilte Zufallsvariablen zu starten, ist der Code in
 der Datei test_variance_statement auszuführen.
+Für den Test der Konsistenz meines Schätzers muss man zunächst Daten mit Data_Generation_exp_model generieren. Daraufhin kann
+man den Code in   nutzen um die Konsistenz zu testen.
