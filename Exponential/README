@@ -1,2 +1,2 @@
 Um den Empirischen Test der Varianz von log(t_1 / t_2) für exponentialverteilte Zufallsvariablen zu starten, ist der Code in
-der Datei    auszuführen.
+der Datei test_variance_statement auszuführen.
