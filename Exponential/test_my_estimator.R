@@ -100,7 +100,15 @@ grid()
 for (i in 2:(n_state - 1)){
   points(x, log(MSE_matrix[i,] / beta_true_length(i)[1]),lwd=2,col=state_colors[i],lty=3)
 }
-legend(10, -2, legend=c(paste0("transition ", 1:(n_state - 1))), col=state_colors[1:(n_state - 1)],lwd=2:2, lty=3:3, cex=0.8)
+
+# Bilde eine Regressionsgerade
+regression_data <- list(reg_x= rep(x, n_state - 1), reg_y= c(sapply(1:(n_state - 1), function(i){log(MSE_matrix[i,] / beta_true_length(i)[1])})))
+regression_model <- lm(reg_y ~ reg_x, data=regression_data)
+
+# Plot regressionsgerade
+abline(regression_model, col="black")
+
+legend(8, -1, legend=c(paste0("transition ", 1:(n_state - 1)), paste0("Slope regression line: ", regression_model$coefficients["reg_x"])), col=c(state_colors[1:(n_state - 1)], "black"),lwd=2:2, lty=3:3, cex=0.8)
 dev.off()
 
 png("Test_consistence_exp_estimator.png")
@@ -108,5 +116,7 @@ plot(x,y ,lwd=2,col=state_colors[1],lty=3, ylab="log(squared difference / square
 for (i in 2:(n_state - 1)){
   points(x,log(MSE_matrix[i,] / beta_true_length(i)[1]),lwd=2,col=state_colors[i],lty=3)
 }
-legend(10, -2, legend=c(paste0("transition ", 1:(n_state - 1))), col=state_colors[1:(n_state - 1)],lwd=2:2, lty=3:3, cex=0.8)
+abline(regression_model, col="black")
+
+legend(8, -1, legend=c(paste0("transition ", 1:(n_state - 1)), paste0("Slope regression line: ", regression_model$coefficients["reg_x"])), col=c(state_colors[1:(n_state - 1)], "black"),lwd=2:2, lty=3:3, cex=0.8)
 dev.off()
